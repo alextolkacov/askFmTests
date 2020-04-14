@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.List;
 
 public class TestContext {
@@ -32,7 +33,8 @@ public class TestContext {
         } else Assertions.assertTrue(true, "Incorrect webDriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         actions = new Actions(driver);
         jse = ((JavascriptExecutor) driver);
     }
